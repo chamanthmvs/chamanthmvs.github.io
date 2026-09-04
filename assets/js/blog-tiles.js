@@ -25,48 +25,55 @@ const blogs = [
 ];
 
 
-const blogGrid = document.getElementById("blog-scroll");
+document.addEventListener("DOMContentLoaded", function () {
 
+    const blogGrid = document.getElementById("blog-scroll");
 
-blogs.forEach(blog => {
+    if (!blogGrid) {
+        console.error("ERROR: #blog-scroll was not found.");
+        return;
+    }
 
-    const tile = document.createElement("a");
+    blogs.forEach(function (blog) {
 
-    tile.className = "blog-tile";
+        const tile = document.createElement("a");
 
-    tile.href = blog.url;
+        tile.className = "blog-tile";
 
-    tile.target = "_blank";
+        tile.href = blog.url;
 
-    tile.rel = "noopener noreferrer";
+        tile.target = "_blank";
 
+        tile.rel = "noopener noreferrer";
 
-    tile.innerHTML = `
-        
-        <img 
-            class="blog-tile-img"
-            src="${blog.image}"
-            alt="${blog.title}"
-        />
+        tile.innerHTML = `
+            <img
+                class="blog-tile-img"
+                src="${blog.image}"
+                alt="${blog.title}"
+            />
 
-        <div class="blog-tile-body">
+            <div class="blog-tile-body">
 
-            <span class="blog-tile-tag">
-                ${blog.tag}
-            </span>
+                <span class="blog-tile-tag">
+                    ${blog.tag}
+                </span>
 
-            <h3>
-                ${blog.title}
-            </h3>
+                <h3>
+                    ${blog.title}
+                </h3>
 
-            <p>
-                ${blog.description}
-            </p>
+                <p>
+                    ${blog.description}
+                </p>
 
-        </div>
-    `;
+            </div>
+        `;
 
+        blogGrid.appendChild(tile);
 
-    blogGrid.appendChild(tile);
+    });
+
+    console.log("Blog tiles loaded:", blogs.length);
 
 });
