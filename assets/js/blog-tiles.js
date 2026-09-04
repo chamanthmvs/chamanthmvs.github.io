@@ -25,16 +25,27 @@ const blogs = [
 ];
 
 
-document.addEventListener("DOMContentLoaded", function () {
+function loadBlogs() {
 
     const blogGrid = document.getElementById("blog-scroll");
 
+    /*
+     * Safety check
+     */
     if (!blogGrid) {
         console.error("ERROR: #blog-scroll was not found.");
         return;
     }
 
-    blogs.forEach(function (blog) {
+    /*
+     * Clear anything already inside it
+     */
+    blogGrid.innerHTML = "";
+
+    /*
+     * Create each blog tile
+     */
+    blogs.forEach(blog => {
 
         const tile = document.createElement("a");
 
@@ -51,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 class="blog-tile-img"
                 src="${blog.image}"
                 alt="${blog.title}"
-            />
+            >
 
             <div class="blog-tile-body">
 
@@ -71,9 +82,21 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
 
         blogGrid.appendChild(tile);
-
     });
 
-    console.log("Blog tiles loaded:", blogs.length);
+    console.log("Blogs loaded:", blogs.length);
+}
 
-});
+
+/*
+ * Wait until the HTML has been loaded
+ */
+if (document.readyState === "loading") {
+
+    document.addEventListener("DOMContentLoaded", loadBlogs);
+
+} else {
+
+    loadBlogs();
+
+}
