@@ -1,5 +1,5 @@
 const blogUrls = [
-    "https://mvschamanth.medium.com/no-more-confusion-on-backpropagation-7adfc271539f",
+    "https://mvsctechblogs.hashnode.dev/understanding-frameworks",
     "https://mvschamanth.medium.com/what-does-backprop-over-time-in-rnn-mean-42333039d927c",
     "https://medium.com/generative-ai/what-are-state-sategraph-and-workflow-in-langgraph-afc3f4392c6f"
 ];
