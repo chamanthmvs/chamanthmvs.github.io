@@ -1,28 +1,72 @@
+const blogs = [
+    {
+        title: "No More Confusion on Backpropagation",
+        description: "A simple explanation of backpropagation and how it actually works.",
+        tag: "Deep Learning",
+        image: "images/backpropagation.png",
+        url: "https://mvschamanth.medium.com/no-more-confusion-on-backpropagation-7adfc271539f"
+    },
+
+    {
+        title: "What Does Backprop Through Time in RNN Mean?",
+        description: "Understanding Backpropagation Through Time in Recurrent Neural Networks.",
+        tag: "Deep Learning",
+        image: "images/bptt-rnn.png",
+        url: "https://mvschamanth.medium.com/what-does-backprop-over-time-in-rnn-mean-4233039d927c"
+    },
+
+    {
+        title: "What Are State, StateGraph and Workflow in LangGraph?",
+        description: "Understanding State, StateGraph and Workflow in LangGraph.",
+        tag: "Generative AI",
+        image: "images/langgraph.png",
+        url: "https://medium.com/generative-ai/what-are-state-sategraph-and-workflow-in-langgraph-afc3f4392c6f"
+    }
+];
+
+
 const blogGrid = document.getElementById("blog-scroll");
 
-console.log("BLOG JS IS RUNNING");
-console.log("blogGrid:", blogGrid);
 
-blogGrid.innerHTML = `
-    <a href="#" class="blog-tile">
+blogs.forEach(blog => {
 
-        <div class="blog-tile-img"></div>
+    const tile = document.createElement("a");
+
+    tile.className = "blog-tile";
+
+    tile.href = blog.url;
+
+    tile.target = "_blank";
+
+    tile.rel = "noopener noreferrer";
+
+
+    tile.innerHTML = `
+        
+        <img 
+            class="blog-tile-img"
+            src="${blog.image}"
+            alt="${blog.title}"
+        />
 
         <div class="blog-tile-body">
 
             <span class="blog-tile-tag">
-                TEST ARTICLE
+                ${blog.tag}
             </span>
 
             <h3>
-                This is a test blog
+                ${blog.title}
             </h3>
 
             <p>
-                If you can see this tile, your HTML and CSS are working.
+                ${blog.description}
             </p>
 
         </div>
+    `;
 
-    </a>
-`;
+
+    blogGrid.appendChild(tile);
+
+});
