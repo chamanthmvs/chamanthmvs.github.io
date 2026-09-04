@@ -2328,73 +2328,155 @@ input, select, textarea {
 
 		}
 
-/* =========================================
-   BLOG TILES
+ /* =========================================
+   MY BLOGS SECTION
    ========================================= */
 
+/*
+   IMPORTANT:
+   The original template treats #work as a
+   full-screen section.
+
+   We don't want that for the blog section.
+   We want:
+       Heading
+          ↓
+       Horizontal row of blog tiles
+          → → → → →
+*/
+
+/* Make the Work section a normal-height section */
 #work {
-    min-height: auto !important;
+    min-height: 0 !important;
     height: auto !important;
-    padding: 6em 0 6em 0 !important;
+
+    padding: 6em 0 !important;
+
+    overflow: hidden !important;
 }
 
-#work .content {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-#work .wrapper.special {
+/* -----------------------------------------
+   Blog section content
+   ----------------------------------------- */
+
+#work > .content {
     width: 100% !important;
-    max-width: 1200px !important;
-    margin: 3em auto 0 auto !important;
-    padding: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
 }
 
 
-/* Blog horizontal container */
+/* -----------------------------------------
+   Blog heading
+   ----------------------------------------- */
+
+#work > .content > header {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+
+/* -----------------------------------------
+   Horizontal blog area
+   ----------------------------------------- */
+
+#work .wrapper {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+}
+
+
+/*
+   THIS is the actual horizontal scrolling
+   container.
+*/
 
 .blog-scroll {
     display: flex !important;
 
     flex-direction: row !important;
 
+    flex-wrap: nowrap !important;
+
     gap: 2em;
 
-    width: 100%;
+    width: 100% !important;
 
-    overflow-x: auto;
+    margin: 0 !important;
 
-    overflow-y: hidden;
-
-    padding: 1em 0 2em 0;
-
-    margin: 0;
+    padding: 1em 3em 2em 3em !important;
 
     box-sizing: border-box;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
 
     scroll-behavior: smooth;
 
     -webkit-overflow-scrolling: touch;
+
+    /*
+       Prevent the browser from trying to
+       vertically scroll when dragging
+       horizontally.
+    */
+    touch-action: pan-x;
 }
 
 
-/* Individual blog tile */
+/*
+   Hide scrollbar visually but KEEP scrolling.
+*/
+
+.blog-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.blog-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.blog-scroll::-webkit-scrollbar-thumb {
+    background: rgba(152, 197, 147, 0.6);
+    border-radius: 10px;
+}
+
+
+/* -----------------------------------------
+   Individual blog tile
+   ----------------------------------------- */
 
 .blog-tile {
-    flex: 0 0 30%;
 
-    width: 30%;
+    /*
+       VERY IMPORTANT:
 
-    min-width: 280px;
+       Do NOT allow flexbox to shrink the
+       cards.
 
-    max-width: 360px;
+       Every card keeps its own width.
+       Therefore multiple cards can exist
+       horizontally and overflow.
+    */
+    flex: 0 0 340px !important;
+
+    width: 340px !important;
+
+    min-width: 340px !important;
+    max-width: 340px !important;
 
     display: block;
 
     box-sizing: border-box;
 
-    background: rgba(21, 34, 65, 0.75);
+    background: rgba(21, 34, 65, 0.85);
 
     border: 1px solid rgba(152, 197, 147, 0.35);
 
@@ -2411,22 +2493,27 @@ input, select, textarea {
 }
 
 
-/* Blog image */
+/* -----------------------------------------
+   Blog image
+   ----------------------------------------- */
 
 .blog-tile-img {
+
     width: 100%;
 
     height: 200px;
 
-    object-fit: cover;
-
     display: block;
+
+    object-fit: cover;
 
     background: rgba(250, 249, 246, 0.08);
 }
 
 
-/* Blog text */
+/* -----------------------------------------
+   Blog text
+   ----------------------------------------- */
 
 .blog-tile-body {
     padding: 1.5em;
@@ -2434,8 +2521,8 @@ input, select, textarea {
 
 
 /* Category */
-
 .blog-tile-tag {
+
     display: block;
 
     font-size: 0.75em;
@@ -2451,8 +2538,8 @@ input, select, textarea {
 
 
 /* Title */
-
 .blog-tile h3 {
+
     font-size: 1.05em;
 
     line-height: 1.35em;
@@ -2466,8 +2553,8 @@ input, select, textarea {
 
 
 /* Description */
-
 .blog-tile p {
+
     font-size: 0.85em;
 
     line-height: 1.5em;
@@ -2478,14 +2565,17 @@ input, select, textarea {
 }
 
 
-/* Hover */
+/* -----------------------------------------
+   Hover
+   ----------------------------------------- */
 
 .blog-tile:hover {
+
     transform: translateY(-5px);
 
     border-color: #98c593;
 
-    background: rgba(21, 34, 65, 0.95);
+    background: rgba(21, 34, 65, 0.98);
 }
 
 
@@ -2501,19 +2591,31 @@ input, select, textarea {
 @media screen and (max-width: 736px) {
 
     #work {
-        padding: 4em 1em 4em 1em !important;
+        padding: 4em 0 !important;
+    }
+
+    #work > .content > header {
+        padding: 0 1em;
+        margin-bottom: 2em;
     }
 
     .blog-scroll {
+
         gap: 1em;
+
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+
     }
 
     .blog-tile {
-        flex: 0 0 80%;
 
-        min-width: 80%;
+        flex: 0 0 80vw !important;
 
-        max-width: 80%;
+        width: 80vw !important;
+
+        min-width: 80vw !important;
+
+        max-width: 80vw !important;
     }
-
 }
