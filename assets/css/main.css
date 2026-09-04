@@ -2356,49 +2356,56 @@ input, select, textarea {
 }
 
 
-/* -----------------------------------------
-   Blog section content
-   ----------------------------------------- */
+/* =========================================================
+   MY BLOGS
+   ========================================================= */
+
+/* Keep the existing binary.jpg background.
+   Only change the layout/height of the Work section. */
+
+#work {
+    height: auto !important;
+    min-height: 0 !important;
+
+    padding: 6em 0 !important;
+
+    color: #FAF9F6;
+
+    overflow: hidden !important;
+}
+
+
+/* ---------------------------------------------------------
+   Work section content
+   --------------------------------------------------------- */
 
 #work > .content {
     width: 100% !important;
     max-width: none !important;
 
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 
-/* -----------------------------------------
+/* ---------------------------------------------------------
    Blog heading
-   ----------------------------------------- */
+   --------------------------------------------------------- */
 
 #work > .content > header {
     text-align: center;
+
+    width: 100%;
+
     margin-bottom: 3em;
 }
 
 
-/* -----------------------------------------
-   Horizontal blog area
-   ----------------------------------------- */
+/* ---------------------------------------------------------
+   Horizontal blog scrolling area
+   --------------------------------------------------------- */
 
-#work .wrapper {
-    width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    overflow: hidden !important;
-}
-
-
-/*
-   THIS is the actual horizontal scrolling
-   container.
-*/
-
-.blog-scroll {
+#work .blog-scroll {
     display: flex !important;
 
     flex-direction: row !important;
@@ -2422,54 +2429,44 @@ input, select, textarea {
 
     -webkit-overflow-scrolling: touch;
 
-    /*
-       Prevent the browser from trying to
-       vertically scroll when dragging
-       horizontally.
-    */
-    touch-action: pan-x;
+    /* Important: cards stay in one row */
+    white-space: nowrap;
 }
 
 
-/*
-   Hide scrollbar visually but KEEP scrolling.
-*/
+/* ---------------------------------------------------------
+   Horizontal scrollbar
+   --------------------------------------------------------- */
 
-.blog-scroll::-webkit-scrollbar {
+#work .blog-scroll::-webkit-scrollbar {
     height: 8px;
 }
 
-.blog-scroll::-webkit-scrollbar-track {
+#work .blog-scroll::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.08);
 }
 
-.blog-scroll::-webkit-scrollbar-thumb {
+#work .blog-scroll::-webkit-scrollbar-thumb {
     background: rgba(152, 197, 147, 0.6);
     border-radius: 10px;
 }
 
 
-/* -----------------------------------------
-   Individual blog tile
-   ----------------------------------------- */
+/* ---------------------------------------------------------
+   Blog tile
+   --------------------------------------------------------- */
 
-.blog-tile {
+#work .blog-tile {
 
-    /*
-       VERY IMPORTANT:
+    /* Fixed card width.
+       This is what creates horizontal overflow. */
 
-       Do NOT allow flexbox to shrink the
-       cards.
-
-       Every card keeps its own width.
-       Therefore multiple cards can exist
-       horizontally and overflow.
-    */
     flex: 0 0 340px !important;
 
     width: 340px !important;
 
     min-width: 340px !important;
+
     max-width: 340px !important;
 
     display: block;
@@ -2482,9 +2479,11 @@ input, select, textarea {
 
     text-decoration: none;
 
-    color: inherit;
+    color: #FAF9F6;
 
     overflow: hidden;
+
+    white-space: normal;
 
     transition:
         transform 0.2s ease,
@@ -2493,12 +2492,11 @@ input, select, textarea {
 }
 
 
-/* -----------------------------------------
+/* ---------------------------------------------------------
    Blog image
-   ----------------------------------------- */
+   --------------------------------------------------------- */
 
-.blog-tile-img {
-
+#work .blog-tile-img {
     width: 100%;
 
     height: 200px;
@@ -2511,18 +2509,20 @@ input, select, textarea {
 }
 
 
-/* -----------------------------------------
-   Blog text
-   ----------------------------------------- */
+/* ---------------------------------------------------------
+   Blog body
+   --------------------------------------------------------- */
 
-.blog-tile-body {
+#work .blog-tile-body {
     padding: 1.5em;
 }
 
 
-/* Category */
-.blog-tile-tag {
+/* ---------------------------------------------------------
+   Blog category
+   --------------------------------------------------------- */
 
+#work .blog-tile-tag {
     display: block;
 
     font-size: 0.75em;
@@ -2537,9 +2537,11 @@ input, select, textarea {
 }
 
 
-/* Title */
-.blog-tile h3 {
+/* ---------------------------------------------------------
+   Blog title
+   --------------------------------------------------------- */
 
+#work .blog-tile h3 {
     font-size: 1.05em;
 
     line-height: 1.35em;
@@ -2552,9 +2554,11 @@ input, select, textarea {
 }
 
 
-/* Description */
-.blog-tile p {
+/* ---------------------------------------------------------
+   Blog description
+   --------------------------------------------------------- */
 
+#work .blog-tile p {
     font-size: 0.85em;
 
     line-height: 1.5em;
@@ -2565,12 +2569,11 @@ input, select, textarea {
 }
 
 
-/* -----------------------------------------
+/* ---------------------------------------------------------
    Hover
-   ----------------------------------------- */
+   --------------------------------------------------------- */
 
-.blog-tile:hover {
-
+#work .blog-tile:hover {
     transform: translateY(-5px);
 
     border-color: #98c593;
@@ -2578,15 +2581,14 @@ input, select, textarea {
     background: rgba(21, 34, 65, 0.98);
 }
 
-
-.blog-tile:hover h3 {
+#work .blog-tile:hover h3 {
     color: #a8cea4;
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-   ========================================= */
+   ========================================================= */
 
 @media screen and (max-width: 736px) {
 
@@ -2596,20 +2598,18 @@ input, select, textarea {
 
     #work > .content > header {
         padding: 0 1em;
+
         margin-bottom: 2em;
     }
 
-    .blog-scroll {
-
+    #work .blog-scroll {
         gap: 1em;
 
         padding-left: 1em !important;
         padding-right: 1em !important;
-
     }
 
-    .blog-tile {
-
+    #work .blog-tile {
         flex: 0 0 80vw !important;
 
         width: 80vw !important;
