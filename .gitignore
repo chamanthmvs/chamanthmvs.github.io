@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor and IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencies and package-manager files
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+
+# Logs and local environment files
+*.log
+.env
+.env.*
+!.env.example
+
+# Common build and coverage output
+dist/
+build/
+coverage/
+
+# Python virtual environments, if this repository later gains Python tooling
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
