@@ -16,6 +16,24 @@ const blogs = [
         description: "Understanding State, StateGraph and Workflow in LangGraph.",
         tag: "Generative AI",
         url: "https://medium.com/generative-ai/what-are-state-sategraph-and-workflow-in-langgraph-afc3f4392c6f"
+    },
+    {
+        title: "What Are State, StateGraph and Workflow in LangGraph?",
+        description: "Understanding State, StateGraph and Workflow in LangGraph.",
+        tag: "Generative AI",
+        url: "https://medium.com/generative-ai/what-are-state-sategraph-and-workflow-in-langgraph-afc3f4392c6f"
+    },
+    {
+        title: "Understanding Frameworks",
+        description: "A guide to understanding what is meant by a framework in software development.",
+        tag: "Software Engineering",
+        url: "https://mvsctechblogs.hashnode.dev/understanding-frameworks"
+    },
+    {
+        title: "Beyond Basics: Solving Interrupt Challenges in LangGraph Workflows",
+        description: "Exploring advanced techniques for handling interrupts in LangGraph workflows.",
+        tag: "Generative AI",
+        url: "https://medium.com/ai-in-plain-english/beyond-basics-solving-interrupt-challenges-in-langgraph-workflows-6c881535e3f1"
     }
 ];
 
