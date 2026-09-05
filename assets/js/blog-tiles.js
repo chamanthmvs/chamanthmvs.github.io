@@ -18,12 +18,6 @@ const blogs = [
         url: "https://medium.com/generative-ai/what-are-state-sategraph-and-workflow-in-langgraph-afc3f4392c6f"
     },
     {
-        title: "What Are State, StateGraph and Workflow in LangGraph?",
-        description: "Understanding State, StateGraph and Workflow in LangGraph.",
-        tag: "Generative AI",
-        url: "https://medium.com/generative-ai/what-are-state-sategraph-and-workflow-in-langgraph-afc3f4392c6f"
-    },
-    {
         title: "Understanding Frameworks",
         description: "A guide to understanding what is meant by a framework in software development.",
         tag: "Software Engineering",
