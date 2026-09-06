@@ -2281,6 +2281,14 @@ input, select, textarea {
 		background-position: top left, center center;
 	}
 
+	#projects {
+		background: url("images/binary.jpg"), url("../../images/binary.jpg");
+		color: #FAF9F6;
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
 /* Contact */
 
 	#contact {
@@ -2618,4 +2626,136 @@ input, select, textarea {
 
         max-width: 80vw !important;
     }
+}
+
+/* =========================================
+   PROJECTS SECTION
+   ========================================= */
+
+#projects {
+	height: auto !important;
+	min-height: 0 !important;
+	padding: 6em 0 !important;
+	color: #FAF9F6;
+	overflow: hidden !important;
+}
+
+#projects > .content {
+	width: 100% !important;
+	max-width: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#projects > .content > header {
+	width: 100%;
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+#projects .blog-scroll {
+	display: flex !important;
+	flex-direction: row !important;
+	flex-wrap: nowrap !important;
+	gap: 2em;
+	width: 100% !important;
+	margin: 0 !important;
+	padding: 1em 3em 2em 3em !important;
+	box-sizing: border-box;
+	overflow-x: auto !important;
+	overflow-y: hidden !important;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	white-space: nowrap;
+}
+
+#projects .blog-scroll::-webkit-scrollbar {
+	height: 8px;
+}
+
+#projects .blog-scroll::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.08);
+}
+
+#projects .blog-scroll::-webkit-scrollbar-thumb {
+	background: rgba(174, 210, 240, 0.6);
+	border-radius: 10px;
+}
+
+#projects .blog-tile {
+	flex: 0 0 340px !important;
+	width: 340px !important;
+	min-width: 340px !important;
+	max-width: 340px !important;
+	display: block;
+	box-sizing: border-box;
+	background: rgba(21, 34, 65, 0.68);
+	border: 1px solid rgba(174, 210, 240, 0.32);
+	text-decoration: none;
+	color: #FAF9F6;
+	overflow: hidden;
+	white-space: normal;
+	transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#projects .blog-tile-body {
+	padding: 1.5em;
+}
+
+#projects .blog-tile-tag {
+	display: block;
+	margin-bottom: 0.75em;
+	color: #b7d8f2;
+	font-size: 0.75em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+#projects .blog-tile h3 {
+	margin: 0 0 0.75em 0;
+	color: #FAF9F6;
+	font-size: 1.05em;
+	line-height: 1.35em;
+	transition: color 0.2s ease;
+}
+
+#projects .blog-tile p {
+	margin: 0;
+	color: rgba(250, 249, 246, 0.7);
+	font-size: 0.85em;
+	line-height: 1.5em;
+}
+
+#projects .blog-tile:hover {
+	transform: translateY(-5px);
+	border-color: #b7d8f2;
+	background: rgba(21, 34, 65, 0.8);
+}
+
+#projects .blog-tile:hover h3 {
+	color: #b7d8f2;
+}
+
+@media screen and (max-width: 736px) {
+	#projects {
+		padding: 4em 0 !important;
+	}
+
+	#projects > .content > header {
+		padding: 0 1em;
+		margin-bottom: 2em;
+	}
+
+	#projects .blog-scroll {
+		gap: 1em;
+		padding-right: 1em !important;
+		padding-left: 1em !important;
+	}
+
+	#projects .blog-tile {
+		flex: 0 0 80vw !important;
+		width: 80vw !important;
+		min-width: 80vw !important;
+		max-width: 80vw !important;
+	}
 }
