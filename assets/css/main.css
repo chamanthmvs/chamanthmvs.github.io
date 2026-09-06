@@ -2674,12 +2674,16 @@ input, select, textarea {
 }
 
 #projects .blog-scroll::-webkit-scrollbar-track {
-	background: rgba(255, 255, 255, 0.08);
+	background: transparent;
 }
 
 #projects .blog-scroll::-webkit-scrollbar-thumb {
-	background: rgba(174, 210, 240, 0.6);
+	background: transparent;
 	border-radius: 10px;
+}
+
+#projects .blog-scroll::-webkit-scrollbar-thumb:hover {
+	background: transparent;
 }
 
 #projects .blog-tile {
