@@ -7,9 +7,9 @@ const projects = [
     },
     {
         title: "AstroWeave",
-        description: "Loading in the content...",
-        tag: "Personal Project",
-        url: "#projects"
+        description: "Astrological multi-agent system built by Langgraph (Still under development),
+        tag: "GenAI application",
+        url: "https://chamanthmvs.github.io/AstroWeave/"
     },
     {
         title: "Loading...",
