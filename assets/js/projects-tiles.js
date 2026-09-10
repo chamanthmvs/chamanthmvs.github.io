@@ -7,7 +7,7 @@ const projects = [
     },
     {
         title: "AstroWeave",
-        description: "Astrological multi-agent system built by Langgraph (Still under development),
+        description: "Astrological multi-agent system built by Langgraph (Still under development)",
         tag: "GenAI application",
         url: "https://chamanthmvs.github.io/AstroWeave/"
     },
