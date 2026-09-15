@@ -2247,7 +2247,7 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		background: url("images/binary.jpg"), url("../../images/binary.jpg");
+		background: url("../../images/binary.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
@@ -2257,7 +2257,7 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("images/binary.jpg"), url("../../images/binary.jpg");
+		background: url("../../images/binary.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2266,7 +2266,7 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("images/binary.jpg"), url("../../images/binary.jpg");
+		background: url("../../images/binary.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2274,7 +2274,7 @@ input, select, textarea {
 /* Work */
 
 	#work {
-		background: url("images/binary.jpg"), url("../../images/binary.jpg");
+		background: url("../../images/binary.jpg");
 		color: #FAF9F6;
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
@@ -2282,7 +2282,15 @@ input, select, textarea {
 	}
 
 	#projects {
-		background: url("images/binary.jpg"), url("../../images/binary.jpg");
+		background: url("../../images/binary.jpg");
+		color: #FAF9F6;
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+	#reading {
+		background: url("../../images/binary.jpg");
 		color: #FAF9F6;
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
@@ -2292,7 +2300,7 @@ input, select, textarea {
 /* Contact */
 
 	#contact {
-	    background: url("images/binary.jpg"), url("../../images/binary.jpg");
+		background: url("../../images/binary.jpg");
 	    color: #FAF9F6;
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
@@ -2761,5 +2769,109 @@ input, select, textarea {
 		width: 80vw !important;
 		min-width: 80vw !important;
 		max-width: 80vw !important;
+	}
+}
+
+/* =========================================
+   READING SHELF
+   ========================================= */
+
+#reading {
+	height: auto !important;
+	min-height: 0 !important;
+	padding: 6em 0 !important;
+	color: #FAF9F6;
+	overflow: hidden !important;
+}
+
+#reading > .content {
+	width: 100% !important;
+	max-width: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#reading > .content > header {
+	width: 100%;
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+#reading .book-scroll {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 2em;
+	width: 100%;
+	margin: 0;
+	padding: 1em 3em 2em;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+#reading .book-tile {
+	flex: 0 0 340px;
+	width: 340px;
+	min-width: 340px;
+	box-sizing: border-box;
+	background: rgba(21, 34, 65, 0.68);
+	border: 1px solid rgba(174, 210, 240, 0.32);
+	color: #FAF9F6;
+}
+
+#reading .book-tile-body {
+	padding: 1.5em;
+}
+
+#reading .book-tile-category {
+	display: block;
+	margin-bottom: 0.75em;
+	color: #b7d8f2;
+	font-size: 0.75em;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+#reading .book-tile h3 {
+	margin: 0 0 0.75em;
+	color: #FAF9F6;
+	font-size: 1.05em;
+	line-height: 1.35em;
+}
+
+#reading .book-tile p {
+	margin: 0;
+	color: rgba(250, 249, 246, 0.7);
+	font-size: 0.85em;
+	line-height: 1.5em;
+}
+
+#reading .book-tile .book-tile-author {
+	margin-bottom: 0.9em;
+	color: #FAF9F6;
+	font-style: italic;
+}
+
+@media screen and (max-width: 736px) {
+	#reading {
+		padding: 4em 0 !important;
+	}
+
+	#reading > .content > header {
+		padding: 0 1em;
+		margin-bottom: 2em;
+	}
+
+	#reading .book-scroll {
+		gap: 1em;
+		padding-right: 1em;
+		padding-left: 1em;
+	}
+
+	#reading .book-tile {
+		flex: 0 0 80vw;
+		width: 80vw;
+		min-width: 80vw;
 	}
 }
