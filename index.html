@@ -503,16 +503,19 @@
 
 
     <!--
-        Your existing blog JavaScript.
+        Tile rendering.
 
-        This creates the blog tiles inside #blog-scroll.
+        render-tiles.js defines the shared renderTiles() helper and must
+        load before the data files that call it.
     -->
+
+    <script src="assets/js/render-tiles.js"></script>
 
     <script src="assets/js/blog-tiles.js"></script>
 
     <script src="assets/js/books-tiles.js"></script>
 
-        <script src="assets/js/projects-tiles.js"></script>
+    <script src="assets/js/projects-tiles.js"></script>
 
 
 </body>

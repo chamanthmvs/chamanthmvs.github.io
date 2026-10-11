@@ -43,20 +43,8 @@ const books = [
     }
 ];
 
-const bookScroll = document.getElementById("book-scroll");
-
-books.forEach((book) => {
-    const tile = document.createElement("article");
-
-    tile.className = "book-tile";
-    tile.innerHTML = `
-        <div class="book-tile-body">
-            <span class="book-tile-category">${book.category}</span>
-            <h3>${book.title}</h3>
-            <p class="book-tile-author">${book.author}</p>
-            <p>${book.description}</p>
-        </div>
-    `;
-
-    bookScroll.appendChild(tile);
+renderTiles({
+    targetId: "book-scroll",
+    variant: "book",
+    data: books
 });

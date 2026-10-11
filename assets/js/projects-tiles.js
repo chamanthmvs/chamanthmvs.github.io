@@ -6,48 +6,27 @@ const projects = [
         url: "https://chamanthmvs.github.io/Phishing-Website-Detection/"
     },
     {
+        title: "Inbox Pilot",
+        description: "A human-in-the-loop Gmail organizer that reads only metadata and applies labels you approve, using rules and a batched LLM.",
+        tag: "GenAI application",
+        url: "https://github.com/chamanthmvs/Inbox-pilot"
+    },
+    {
         title: "AstroWeave",
         description: "Astrological multi-agent system built by Langgraph (Still under development)",
         tag: "GenAI application",
         url: "https://chamanthmvs.github.io/AstroWeave/"
     },
     {
-        title: "Loading...",
-        description: "Project details are coming soon.",
-        tag: "Upcoming",
-        url: "#projects"
-    },
-    {
-        title: "Upcoming Project",
-        description: "Project details are coming soon.",
-        tag: "Upcoming",
-        url: "#projects"
-    },
-    {
-        title: "Loading...",
-        description: "Project details are coming soon.",
-        tag: "Upcoming",
-        url: "#projects"
+        title: "More projects in progress",
+        description: "New Data Science and Generative AI projects are on the way.",
+        tag: "Coming soon",
+        comingSoon: true
     }
 ];
 
-const projectScroll = document.getElementById("project-scroll");
-
-projects.forEach((project) => {
-    const tile = document.createElement("a");
-
-    tile.className = "blog-tile";
-    tile.href = project.url;
-    tile.target = "_blank";
-    tile.rel = "noopener noreferrer";
-
-    tile.innerHTML = `
-        <div class="blog-tile-body">
-            <span class="blog-tile-tag">${project.tag}</span>
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-        </div>
-    `;
-
-    projectScroll.appendChild(tile);
+renderTiles({
+    targetId: "project-scroll",
+    variant: "link",
+    data: projects
 });

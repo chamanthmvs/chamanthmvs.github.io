@@ -2748,6 +2748,28 @@ input, select, textarea {
 	color: #b7d8f2;
 }
 
+/* Coming-soon placeholder: intentionally non-clickable, de-emphasised */
+#projects .blog-tile.coming-soon {
+	background: rgba(21, 34, 65, 0.4);
+	border-style: dashed;
+	border-color: rgba(174, 210, 240, 0.25);
+	cursor: default;
+}
+
+#projects .blog-tile.coming-soon:hover {
+	transform: none;
+	border-color: rgba(174, 210, 240, 0.25);
+	background: rgba(21, 34, 65, 0.4);
+}
+
+#projects .blog-tile.coming-soon:hover h3 {
+	color: #FAF9F6;
+}
+
+#projects .blog-tile.coming-soon .blog-tile-tag {
+	color: rgba(183, 216, 242, 0.7);
+}
+
 @media screen and (max-width: 736px) {
 	#projects {
 		padding: 4em 0 !important;

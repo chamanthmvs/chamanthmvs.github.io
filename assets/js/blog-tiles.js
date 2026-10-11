@@ -31,23 +31,8 @@ const blogs = [
     }
 ];
 
-const blogScroll = document.getElementById("blog-scroll");
-
-blogs.forEach((blog) => {
-    const tile = document.createElement("a");
-
-    tile.className = "blog-tile";
-    tile.href = blog.url;
-    tile.target = "_blank";
-    tile.rel = "noopener noreferrer";
-
-    tile.innerHTML = `
-        <div class="blog-tile-body">
-            <span class="blog-tile-tag">${blog.tag}</span>
-            <h3>${blog.title}</h3>
-            <p>${blog.description}</p>
-        </div>
-    `;
-
-    blogScroll.appendChild(tile);
+renderTiles({
+    targetId: "blog-scroll",
+    variant: "link",
+    data: blogs
 });
